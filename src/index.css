@@ -55,13 +55,14 @@ code {
 .react-grid-layout {
   position: relative;
   transition: height 200ms ease;
+  background: grey;
 }
 
 .react-grid-item {
   transition: all 200ms ease;
   transition-property: left, top;
-  background: rgba(0, 132, 255, 0.473);
   font-family: Arial, Helvetica, sans-serif;
+  background: white;
   text-align: center;
 }
 
