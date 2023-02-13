@@ -84,3 +84,365 @@
                                 <text x="8" data-z-index="1" y="20" style="color:#333333;cursor:default;font-size:12px;fill:#333333;">
                                     <tspan style="font-size: 10px">1222905600000</tspan><tspan style="fill:#7cb5ec" x="8" dy="15">●</tspan><tspan dx="0"> AAPL: </tspan>
                                     <tspan style="font-weight:bold" dx="0">14.30</tspan></text></g></svg></div></div><span className="react-resizable-handle react-resizable-handle-se"></span></div> */} -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+
+
+                                    // import * as React from 'react';
+                                    // import Paper from '@mui/material/Paper';
+                                    // import { ArgumentAxis, ValueAxis, BarSeries, Chart } from '@devexpress/dx-react-chart-material-ui';
+                                    // import { ValueScale } from '@devexpress/dx-react-chart';
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    // interface IDataItem {
+                                    // month: string,
+                                    // sale: number,
+                                    // total: number,
+                                    // }
+                                    
+                                    // const chartData: IDataItem[] = [
+                                    // { month: 'Jan', sale: 50, total: 987 },
+                                    // { month: 'Feb', sale: 100, total: 3000 },
+                                    // { month: 'March', sale: 30, total: 1100 },
+                                    // { month: 'April', sale: 107, total: 7100 },
+                                    // { month: 'May', sale: 95, total: 4300 },
+                                    // { month: 'June', sale: 150, total: 6210 },
+                                    // { month: 'July', sale: 212, total: 6500 },
+                                    // { month: 'August', sale: 80, total: 4500 },
+                                    // { month: 'September', sale: 120, total: 2000 },
+                                    // { month: 'October', sale: 138, total: 3690 },
+                                    // { month: 'November', sale: 60, total: 6840 },
+                                    // { month: 'Decenber', sale: 160, total: 7500 },
+                                    // ];
+                                    
+                                    // export default function App() {
+                                    // return (
+                                    // <Paper>
+                                        // <Chart // data={chartData} //>
+                                            //
+                                            <ValueScale name="sale" />
+                                            //
+                                            <ValueScale name="total" />
+                                    
+                                            //
+                                            <ArgumentAxis />
+                                            //
+                                            <ValueAxis scaleName="sale" showGrid={false} showLine={true} showTicks={true} />
+                                            //
+                                            <BarSeries // name="Units Sold" // valueField="sale" // argumentField="month" // scaleName="sale" // />
+                                    
+                                            //
+                                        </Chart>
+                                        // </Paper>
+                                    // );
+                                    // } -->
+
+
+
+
+
+                                    <!-- 
+
+                                            // interface IDataItem {
+    //     month: string,
+    //     sale: number,
+    //     total: number,
+    // }
+
+    // const chartData: IDataItem[] = [
+    //     { month: 'Jan', sale: 50, total: 987 },
+    //     { month: 'Feb', sale: 100, total: 3000 },
+    //     { month: 'March', sale: 30, total: 1100 },
+    //     { month: 'April', sale: 107, total: 7100 },
+    //     { month: 'May', sale: 95, total: 4300 },
+    //     { month: 'June', sale: 150, total: 6210 },
+    //     { month: 'July', sale: 212, total: 6500 },
+    //     { month: 'August', sale: 80, total: 4500 },
+    //     { month: 'September', sale: 120, total: 2000 },
+    //     { month: 'October', sale: 138, total: 3690 },
+    //     { month: 'November', sale: 60, total: 6840 },
+    //     { month: 'Decenber', sale: 160, total: 7500 },
+    // ];
+
+
+
+
+
+
+
+
+                {/* <Paper>
+                <Chart
+                    data={chartData}
+                >
+                    <ValueScale name="sale" />
+                    <ValueScale name="total" />
+
+                    <ArgumentAxis />
+                    <ValueAxis scaleName="sale" showGrid={false} showLine={true} showTicks={true} />
+                    <BarSeries
+                        name="Units Sold"
+                        valueField="sale"
+                        argumentField="month"
+                        scaleName="sale"
+                    />
+
+                </Chart>
+            </Paper> */}
+            {/* // </div > */}
+                                     -->
+
+
+                                        import React, { useState } from 'react';
+import { Responsive, WidthProvider } from 'react-grid-layout';
+import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid } from 'recharts';
+
+const ResponsiveReactGridLayout = WidthProvider(Responsive);
+type Props = {
+
+}
+
+const View: React.FC<Props> = ({ }: Props) => {
+    const layouts = {
+        lg: [
+            { i: 'a', w: 2, h: 3, x: 0, y: 0, },
+            { i: 'b', w: 2, h: 3, x: 2, y: 0, },
+            { i: 'c', w: 2, h: 3, x: 4, y: 0, }
+        ]
+    };
+    const charts = {
+        cht: [
+            { i: 'a', w: 2, h: 3, x: 0, y: 0, },
+            { i: 'b', w: 2, h: 3, x: 0, y: 0, },
+            { i: 'c', w: 2, h: 3, x: 0, y: 0, },
+
+        ]
+    }
+
+    const getId = () => {
+        return Math.random().toString();
+    };
+
+    const [layout, setLayout] = useState([{ x: 0, y: 0, w: 3, h: 3, i: getId() }])
+    const [chart, setChart] = useState([
+        {name: 'Yanvar', uv: 4000, pv: 2400, amt: 2400 , i: getId()},
+        {name: 'Fevral', uv: 3000, pv: 1398, amt: 2210 , i: getId()},
+        {name: 'Mart', uv: 2000, pv: 9800, amt: 2290 , i: getId()},
+        {name: 'Aprel', uv: 2780, pv: 3908, amt: 2000 , i: getId()},
+        {name: 'May', uv: 1890, pv: 4800, amt: 2181 , i: getId()},
+        {name: 'Iyun',   uv: 2390, pv: 3800, amt: 2500 , i: getId()},
+        {name: 'Iyul', uv: 3490, pv: 4300, amt: 2100 , i: getId()},
+    ])
+
+    const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+        console.log("click")
+        const newItems = { x: 0, y: 0, w: 3, h: 3, i: getId() };
+        if (layout.some(item => item.x === 0 && item.y)) {
+            setLayout(
+                layout.map(item => {
+                    if (item.x === 0) {
+                        return { ...item, y: item.y++ };
+                    }
+
+                    return item;
+                }).concat([newItems])
+            )
+        } else {
+            setLayout(layout.concat([newItems]));
+        }
+    }
+    const chartClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+        console.log("click")
+        const newChart = [
+            {name: 'Yanvar', uv: 4000, pv: 2400, amt: 2400, i: getId() },
+            {name: 'Fevral', uv: 3000, pv: 1398, amt: 2210, i: getId() },
+            {name: 'Mart', uv: 2000, pv: 9800, amt: 2290, i: getId() },
+            {name: 'Aprel', uv: 2780, pv: 3908, amt: 2000, i: getId() },
+            {name: 'May', uv: 1890, pv: 4800, amt: 2181, i: getId() },
+            {name: 'Iyun',   uv: 2390, pv: 3800, amt: 2500, i: getId() },
+            {name: 'Iyul', uv: 3490, pv: 4300, amt: 2100, i: getId() },
+        ];
+        if (chart.some(item => item.uv === 0 && item.pv)) {
+            setChart(chart.map(item => {
+                if (item.amt === 0) {
+                    return { ...item, pv: item.pv++ }
+                }
+                return item
+            }).concat(newChart)
+            )
+        } else {
+            setChart(chart.concat(newChart))
+        }
+
+
+    }
+
+    const defaultProps = {
+        isDraggable: true,
+        isResizable: true,
+        items: 5,
+        rowHeight: 30,
+        preventCollision: false,
+        cols: 12
+    };
+
+
+    return (
+        <>
+            <div>
+                <button onClick={handleClick}>
+                    Add item
+                </button>
+                <button onClick={chartClick}>Add Chart</button>
+            </div>
+            <ResponsiveReactGridLayout
+                {...defaultProps}
+                className="test-layout"
+                layouts={layouts}
+                cols={{ lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 }}
+                rowHeight={40}>
+                {layout.map(item => (
+                    <div key={item.i} data-grid={item} style={{ overflow: 'hidden' }}>
+                        <input type="text" placeholder='Title' style={{ width: '100%', background: 'white', border: 'unset' }} />
+                        <div>hello</div>
+                    </div>
+                ))}
+
+                <div key='a'>
+                    {chart.map(item => (
+                        // {/* <span className="react-resizable-handle" />  */}
+                        <ResponsiveContainer>
+                            <BarChart key={item.i}  data-grid={item} width={600} height={600}
+                                margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+                                <XAxis dataKey="name" />
+                                <YAxis />
+                                <CartesianGrid strokeDasharray="3 3" />
+                                <Bar dataKey="pv" fill="#8884d8" />
+                                <Bar dataKey="uv" fill="#82ca9d" />
+                            </BarChart>
+                        </ResponsiveContainer>
+                    ))}
+
+
+                </div>
+            </ResponsiveReactGridLayout>
+        </>
+    )
+}
+
+export default View;
+
+
+
+
+
+                                     <!-- 
+                                        /*import React, { useState } from "react";
+import { WidthProvider, Responsive } from "react-grid-layout";
+import _ from "lodash";
+import Chart from './DropControlsHere/Panels/chart'
+import Table from './DropControlsHere/Panels/table'
+import Item from "antd/lib/list/Item";
+// import Item from './DropControlsHere/item/index'
+
+const ResponsiveReactGridLayout = WidthProvider(Responsive);
+
+type Props = {
+
+}
+type ChartType = {
+    name: string
+    item: string,
+    i: string,
+    x: number,
+    y: number,
+    w: number,
+    h: number,
+    minW: number,
+    minH: number
+}
+
+const View: React.FC<Props> = ({ }: Props) => {
+
+
+
+     const [charts, setCharts] = useState({
+
+        
+
+         items: _.map((i: ChartType) => {
+             return {
+                 name: "",
+                 item: "",
+                 i: "",
+                 x: 0,
+                 y: 0,
+                 w: 0,
+                 h: 0,
+                 minW: 0,
+                 minH: 0
+             };
+         }),
+         newCounter: 0
+     });
+
+
+
+     console.log(charts);
+    return (
+         <div>
+             <Chart setCharts={setCharts} charts={charts} />
+             <Table setCharts={setCharts} charts={charts} />
+             <ResponsiveReactGridLayout
+                 autoSize
+                  layouts={charts.items}
+                 useCSSTransforms={false}
+                 {...charts}
+             >
+                 {_.map(charts.items, (el: any) => {
+                     const removeStyle = {
+                         position: "absolute",
+                         right: "2px",
+                         top: "0",
+                         cursor: "pointer"
+                     };
+
+                     const i = el.i;
+                     return (
+                         <div className="box " key={i} data-grid={el}>
+                             <div className="chart">{el.item}</div>
+                             <span
+                                 className="remove"
+                             >
+                                 x
+                             </span>
+                         </div>
+                     );
+                 })}
+             </ResponsiveReactGridLayout>
+         </div>
+        
+    );
+}
+
+export default View;*/
+
+                                      -->

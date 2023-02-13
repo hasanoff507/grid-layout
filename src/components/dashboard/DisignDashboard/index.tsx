@@ -1,5 +1,4 @@
-import QuickTiles from './Quick Tiles'
-import Test from './Quick Tiles/test'
+import QuickTiles from './QuickTiles/'
 type Props = {
 }
 
@@ -9,7 +8,6 @@ const View: React.FC<Props> = ({ }: Props) => {
     return (
         <div>
             <QuickTiles />
-            {/* <Test /> */}
         </div>
 
 
